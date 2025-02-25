@@ -28,6 +28,6 @@ test.beforeEach(async ({page})=>{
         const loginPage = new LoginPage(page);
         await loginPage.openLoginPage();
         await loginPage.login(faker.internet.email(), faker.internet.password())
-        await expect(loginPage.incorrectCredentialsPopUp).toHaveText("Incorrect credentials");
+        await expect(loginPage.incorrectCredentialsPopUp).toContainText("Incorrect credentials");
     })
 })

@@ -1,9 +1,9 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 jobs:
   test:
     timeout-minutes: 60
@@ -19,9 +19,8 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-
       - name: Run Playwright tests
-        env: ${{secrets.APP_URL}}
+        env: ${{ secrets.APP_URL }}
         run: npx playwright test
 
       - uses: actions/upload-artifact@v4

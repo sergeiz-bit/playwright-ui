@@ -4,7 +4,7 @@
    git clone https://github.com/sergeiz-bit/playwright-ui.git
 
 2. Install dependencies:
-   npm install
+   npm ci
   
 3. Install Playwright browsers:
    npx playwright install 
@@ -15,7 +15,4 @@
 
 5. Run Tests:
    npx playwright test tests/Login.spec.ts
-    
-
-
-
+  

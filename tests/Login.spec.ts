@@ -10,9 +10,9 @@ test.beforeEach(async ({page})=>{
 
     test('Login with short login and password, should show validation error and signin button is disabled', async ({page}) => {
         const loginPage = new LoginPage(page);
-        await loginPage.usernameField.fill("a");
+        await loginPage.usernameField.fill(faker.lorem.word(1));
         await expect(loginPage.usernameInputError).toBeVisible();
-        await loginPage.passwordField.fill("b");
+        await loginPage.passwordField.fill(faker.lorem.word(7));
         await expect(loginPage.passwordInputError).toBeVisible();
         await expect(loginPage.signInButton).toBeDisabled();
     })

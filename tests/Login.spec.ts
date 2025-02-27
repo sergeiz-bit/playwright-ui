@@ -19,8 +19,8 @@ test.beforeEach(async ({page})=>{
     })
 
     test('Login with empty login and password ', async () => {
-        await loginPage.usernameField.fill(" ");
-        await loginPage.passwordField.fill(" ");
+        await loginPage.usernameField.fill("");
+        await loginPage.passwordField.fill("");
         await expect(loginPage.signInButton).toBeDisabled();
     })
 

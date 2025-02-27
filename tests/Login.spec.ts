@@ -19,9 +19,11 @@ test.beforeEach(async ({page})=>{
     })
 
     test('Login with empty login and password ', async () => {
-        await loginPage.usernameField.fill("");
-        await loginPage.passwordField.fill("");
-        await expect(loginPage.signInButton).toBeDisabled();
+        await expect(loginPage.signInButton).toBeEnabled();
+        await loginPage.signInButton.click();
+        await expect(loginPage.usernameField).toBeVisible();
+        await expect(loginPage.passwordField).toBeVisible();
+        await expect(loginPage.signInButton).toBeEnabled();
     })
 
     test("Login with incorrect credentials, verify pop-up message appears", async () => {
